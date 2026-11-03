@@ -50,7 +50,7 @@ jobs:
       - name: Configure Pages
         if: steps.pages.outputs.enabled == 'true'
         uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v4
+      - uses: actions/upload-pages-artifact@v5
         if: steps.pages.outputs.enabled == 'true'
         with:
           path: dist
