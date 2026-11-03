@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="RDR2 Collector’s Ultimate">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="65%">
+      <stop offset="0" stop-color="#8e2a20"/>
+      <stop offset="1" stop-color="#4a120d"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f3d68a"/>
+      <stop offset="1" stop-color="#b8862f"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="30" fill="url(#bg)" stroke="url(#gold)" stroke-width="3"/>
+  <circle cx="32" cy="32" r="24.5" fill="none" stroke="url(#gold)" stroke-width="1" stroke-dasharray="1.5 2.2"/>
+  <path d="M32 9l4.2 18.8L55 32l-18.8 4.2L32 55l-4.2-18.8L9 32l18.8-4.2z" fill="url(#gold)"/>
+  <path d="M32 18.5l2 11.5 11.5 2-11.5 2-2 11.5-2-11.5L18.5 32 30 30z" fill="#4a120d" opacity=".55" transform="rotate(45 32 32)"/>
+  <circle cx="32" cy="32" r="4.2" fill="#2b0b08" stroke="url(#gold)" stroke-width="1.6"/>
+</svg>
