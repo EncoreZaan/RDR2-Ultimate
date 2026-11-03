@@ -67,7 +67,8 @@ simulées, date figée au milieu du calendrier livré.
   sur le projet *desktop*).
 - ESLint et TypeScript : 0 erreur. `verify:dist` : OK.
 
-La CI (`.github/workflows/ci.yml`) exécute l’ensemble à chaque push et pull request.
+La CI (`.github/workflows/ci.yml`) exécute l’ensemble à chaque push et pull request ;
+sur GitHub Actions (PR #1) : job qualité ✅, E2E ✅ **43 réussis, 2 ignorés** en 56 s.
 
 ## Limites
 

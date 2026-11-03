@@ -75,6 +75,20 @@ Pour que la synchronisation automatique puisse continuer à pousser sur `main`, 
 Sur un dépôt privé avec GitHub Free, les règles de protection de branche ne sont pas
 disponibles (fonctionnalité Pro/Team) : la CI reste exécutée sur chaque PR.
 
-## État actuel
+## État actuel (2026-11-03)
 
-_Renseigné après la mise en production — voir ci-dessous._
+| Élément | État vérifié |
+| --- | --- |
+| Build de production + `verify-dist` dans GitHub Actions | ✅ réussis (run « Deploy (GitHub Pages) » n° 1) |
+| GitHub Pages | ❌ **non activé** : l’API renvoie `404 Not Found` pour `repos/EncoreZaan/RDR2-Ultimate/pages`. Le dépôt est privé ; Pages pour un dépôt privé exige GitHub Pro/Team/Enterprise. Aucun outil disponible ne permet de l’activer à votre place (droit administrateur). |
+| Workflow Pages | Se met en pause proprement (avis « GitHub Pages disabled ») tant que Pages n’est pas activé, puis déploie automatiquement dès l’activation. |
+| Cloudflare Pages | ⏸️ prêt, inactif (secrets absents) — job « skip » réussi. |
+| URL de production | Aucune pour l’instant. |
+
+**Action humaine requise (au choix)** :
+- **A. GitHub Pro** (payant, ~4 $/mois) → *Settings › Pages › Source : GitHub Actions* → relancer
+  le workflow. URL : `https://encorezaan.github.io/RDR2-Ultimate/`.
+- **B. Gratuit** : créer un compte Cloudflare et ajouter les deux secrets (option 2). URL :
+  `https://rdr2-ultimate.pages.dev`.
+- (Rendre le dépôt public activerait Pages gratuitement mais n’est **pas** recommandé ici et
+  n’a pas été fait.)

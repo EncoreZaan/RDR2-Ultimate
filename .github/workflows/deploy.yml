@@ -19,7 +19,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    outputs:
+      pages: ${{ steps.pages.outputs.enabled }}
     steps:
+      - name: Check that GitHub Pages is enabled
+        id: pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh api "repos/${{ github.repository }}/pages" > /dev/null 2>&1; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "::notice title=GitHub Pages disabled::Pages is not enabled for this repository (private repositories need GitHub Pro/Team/Enterprise). Enable it in Settings > Pages > Source: GitHub Actions, or use the Cloudflare Pages workflow. See docs/DEPLOYMENT.md."
+          fi
       - uses: actions/checkout@v5
         with:
           ref: main
@@ -35,13 +48,16 @@ jobs:
       - name: Verify the bundle before publishing (no sources, no secrets)
         run: npm run verify:dist
       - name: Configure Pages
+        if: steps.pages.outputs.enabled == 'true'
         uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
+        if: steps.pages.outputs.enabled == 'true'
         with:
           path: dist
 
   deploy:
     needs: build
+    if: needs.build.outputs.pages == 'true'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
