@@ -45,7 +45,7 @@ jobs:
         if: steps.gate.outputs.enabled == 'true'
         with:
           ref: main
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@v7
         if: steps.gate.outputs.enabled == 'true'
         with:
           node-version-file: .nvmrc
