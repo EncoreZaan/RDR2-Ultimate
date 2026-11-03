@@ -33,7 +33,7 @@ jobs:
             echo "enabled=false" >> "$GITHUB_OUTPUT"
             echo "::notice title=GitHub Pages disabled::Pages is not enabled for this repository (private repositories need GitHub Pro/Team/Enterprise). Enable it in Settings > Pages > Source: GitHub Actions, or use the Cloudflare Pages workflow. See docs/DEPLOYMENT.md."
           fi
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         with:
           ref: main
       - uses: actions/setup-node@v5
