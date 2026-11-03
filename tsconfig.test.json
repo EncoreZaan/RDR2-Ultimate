@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.test.tsbuildinfo",
+    "types": [
+      "vite/client",
+      "vite-plugin-pwa/preact",
+      "vite-plugin-pwa/info",
+      "node"
+    ]
+  },
+  "include": [
+    "src",
+    "tests",
+    "e2e"
+  ]
+}
