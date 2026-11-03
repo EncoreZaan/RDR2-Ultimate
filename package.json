@@ -2,7 +2,7 @@
   "name": "rdr2-collectors-ultimate",
   "private": true,
   "version": "1.0.0",
-  "description": "RDR2 Collector's Ultimate \u2014 carte de collection personnelle, sans publicit\u00e9, installable et utilisable hors ligne.",
+  "description": "RDR2 Collector's Ultimate — carte de collection personnelle, sans publicité, installable et utilisable hors ligne.",
   "type": "module",
   "license": "UNLICENSED",
   "engines": {
@@ -39,6 +39,7 @@
     "@testing-library/preact": "^3.2.6",
     "@types/leaflet": "^1.9.22",
     "@types/node": "^26.6.6",
+    "@vitest/coverage-v8": "^5.1.0",
     "eslint": "^10.14.0",
     "globals": "^17.14.0",
     "jsdom": "^30.1.3",
